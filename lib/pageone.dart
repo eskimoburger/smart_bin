@@ -7,13 +7,9 @@ import 'main.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 
-final _database = FirebaseDatabase.instance.ref();
-String humidity = "Result go here";
-String temperature = "Result go here";
-String statuse = "Result go here";
-late StreamSubscription _databaseSteam;
-
 class PageOne extends StatelessWidget {
+  const PageOne({Key? key, required this.data}) : super(key: key);
+  final String data;
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -49,7 +45,7 @@ class PageOne extends StatelessWidget {
                                     padding: const EdgeInsets.only(left: 16.0),
                                     child: Container(
                                       child: Text(
-                                        'Humidity : $humidity ',
+                                        'Humidity : $data ',
                                         style: TextStyle(
                                           color: new Color(0xff000000),
                                           fontSize: 24.0,

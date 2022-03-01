@@ -3,16 +3,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'dart:async';
 import 'main.dart';
 
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_database/firebase_database.dart';
-
-final _database = FirebaseDatabase.instance.ref();
-String humidity = "Result go here";
-String temperature = "Result go here";
-String statuse = "Result go here";
-late StreamSubscription _databaseSteam;
-
 class PageThree extends StatelessWidget {
+  const PageThree({Key? key, required this.data}) : super(key: key);
+  final String data;
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -48,7 +41,7 @@ class PageThree extends StatelessWidget {
                                     padding: const EdgeInsets.only(left: 16.0),
                                     child: Container(
                                       child: Text(
-                                        'Stat use : $statuse ',
+                                        'Stat use : $data ',
                                         style: TextStyle(
                                           color: new Color(0xff000000),
                                           fontSize: 24.0,

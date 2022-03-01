@@ -54,16 +54,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<Widget> pages = [
-    PageOne(),
-    PageTwo(),
-    PageThree(),
-  ];
   final _database = FirebaseDatabase.instance.ref();
   String humidity = "Result go here";
   String temperature = "Result go here";
   String statuse = "Result go here";
   late StreamSubscription _databaseSteam;
+  List<Widget> pages = [];
 
   @override
   void initState() {
@@ -77,6 +73,24 @@ class _MyHomePageState extends State<MyHomePage> {
       final Object? _humidity = event.snapshot.value;
       setState(() {
         humidity = _humidity.toString();
+        pages.add(
+          PageOne(
+            data: _humidity.toString(),
+          ),
+        );
+      });
+    });
+
+    _databaseSteam =
+        _database.child("/FirebaseIOT/temperature").onValue.listen((event) {
+      final Object? _temperature = event.snapshot.value;
+      setState(() {
+        temperature = _temperature.toString();
+        pages.add(
+          PageTwo(
+            data: _temperature.toString(),
+          ),
+        );
       });
     });
     _databaseSteam =
@@ -84,13 +98,11 @@ class _MyHomePageState extends State<MyHomePage> {
       final Object? _statuse = event.snapshot.value;
       setState(() {
         statuse = _statuse.toString();
-      });
-    });
-    _databaseSteam =
-        _database.child("/FirebaseIOT/temperature").onValue.listen((event) {
-      final Object? _temperature = event.snapshot.value;
-      setState(() {
-        temperature = _temperature.toString();
+        pages.add(
+          PageThree(
+            data: _statuse.toString(),
+          ),
+        );
       });
     });
   }
