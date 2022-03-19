@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "703610162434",
+    "firebase_url": "https://smart-bin-23a82-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "smart-bin-23a82",
+    "storage_bucket": "smart-bin-23a82.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703610162434:android:6890f1dbd3b5cfb58e061b",
+        "android_client_info": {
+          "package_name": "com.example.smart_bin_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "703610162434-ohgaih2bqnqr7enbeovk0vol62omhplr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6K-vAHK-5vVRPckHtKHeV7P3fcq8jHf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "703610162434-ohgaih2bqnqr7enbeovk0vol62omhplr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
